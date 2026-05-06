@@ -251,6 +251,9 @@ img, .gr-image img {
 """
 
 # ─── UI ───────────────────────────────────────────────────────────────────────
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
+
 with gr.Blocks(css=css, theme=gr.themes.Base()) as demo:
 
     gr.HTML("""
@@ -297,7 +300,7 @@ with gr.Blocks(css=css, theme=gr.themes.Base()) as demo:
             image_out = gr.Image(label="", height=320, show_label=False)
 
             gr.HTML('<div class="section-label" style="margin-top:20px">📋 Design Plan</div>')
-            text_out = gr.Textbox(label="", lines=20, show_copy_button=True, show_label=False)
+            text_out = gr.Textbox(label="", lines=20, show_label=False)
 
     gen_btn.click(
         fn=generate_design,
@@ -305,6 +308,5 @@ with gr.Blocks(css=css, theme=gr.themes.Base()) as demo:
         outputs=[text_out, image_out],
     )
 
-# ─── Entry point (HF Spaces expects this) ────────────────────────────────────
-if __name__ == "__main__":
-    demo.launch()
+# ─── Entry point ─────────────────────────────────────────────────────────────
+demo.launch()
