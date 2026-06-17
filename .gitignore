@@ -1,0 +1,32 @@
+# Environment secrets
+.env
+*.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model files (avoid uploading large AI files)
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+*.h5
+
+# Local data
+data/
+uploads/
+outputs/
+
+# Vector databases
+*.faiss
+*.index
+chroma_db/
+
+# OS files
+.DS_Store
+Thumbs.db
